@@ -1,0 +1,22 @@
+<h2>Resend unlock instructions</h2>
+If you haven't received an email to confirm your email address, please enter your email address again in this form - we will send the confirmation email again. <br /> <br />
+
+<div class="field form-group content row">
+  <div class="col-sm-7">
+<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+  </div><br />
+
+  <div class="actions">
+    <%= f.submit "Resend unlock instructions", class: "btn btn-primary" %>
+  </div>
+<% end %>
+  </div>
+  <div class="col-sm-5"> <br />
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

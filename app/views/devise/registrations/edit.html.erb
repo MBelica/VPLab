@@ -1,0 +1,212 @@
+<h3>Account options</h3><br />
+
+<%= devise_error_messages! %>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="personl-tab" data-toggle="tab" href="#personal" role="tab" aria-controls="personal" aria-selected="true">
+      Personal data</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="optional-tab" data-toggle="tab" href="#optional" role="tab" aria-controls="optional" aria-selected="false">Optional Information</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab" aria-controls="password" aria-selected="false">Password</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
+  </li>
+</ul>
+<div class="tab-content">
+
+  <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personl-tab">
+
+    <br />
+
+    <h4>Personal data</h4>
+    The following data is stored in vpLab. If you have requests about any parts of the data, please contact the lab. <br /> <br /><br />
+
+    <h5>Common data</h5>
+
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table">
+          <tr>
+            <th>Firstname</th>
+            <th><%= current_user.firstname %></th>
+          </tr>
+          <tr>
+            <td>Lastname</td>
+            <td><%= current_user.lastname %></td>
+          </tr>
+          <tr>
+            <td>Role</td>
+            <td><%= current_user.role %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <table class="table">
+          <tr>
+            <th>Email</th>
+            <th><%= current_user.email %></th>
+          </tr>
+          <tr>
+            <td>Matrikel</td>
+            <td><%= current_user.matrikel %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane fade" id="optional" role="tabpanel" aria-labelledby="optional-tab">
+
+    <br />
+
+    <h4>Optional data</h4>
+    The following data is stored in vpLab. If you have requests about any parts of the data, please contact the lab. <br /> <br />
+
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+      <div class="row">
+        <div class="col-md-6">
+          <table class="table">
+            <tr>
+              <th><%= f.label :gender, style: "line-height: 34px;" %></th>
+              <th><%= f.text_field :gender, autofocus: true, class: "form-control" %></th>
+            </tr>
+            <tr>
+              <th><%= f.label :birthday, style: "line-height: 34px;" %></th>
+              <th><%= f.text_field :birthday, autofocus: true, class: "form-control" %></th>
+            </tr>
+            <tr>
+              <th><%= f.label :country_name, style: "line-height: 34px;" %></th>
+              <th><%= f.text_field :country_name, autofocus: true, class: "form-control" %></th>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table class="table">
+            <tr>
+              <th><%= f.label :begin_study, 'Begin of studies', style: "line-height: 34px;" %></th>
+              <th><%= f.text_field :begin_study, autofocus: true, class: "form-control" %></th>
+            </tr>
+            <tr>
+              <th><%= f.label :experience, style: "line-height: 34px;" %></th>
+              <th><%= f.text_field :experience, autofocus: true, class: "form-control" %></th>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+
+      <h5>Secondary email</h5>
+      You can configure a secondary email, information and invitations for experiments will be sent to this secondary email. For login, please continue to use your primary email. <br /> <br />
+
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table">
+            <tr>
+              <th><%= f.label :secondary_email %></th>
+              <th><%= f.email_field :secondary_email, autofocus: true, autocomplete: "email", class: "form-control" %></th>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="actions" style="text-align: right;">
+        <%= f.submit "Update", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+
+  </div>
+
+  <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+
+    <br />
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+
+
+    <h4>Password</h4>
+    <div class="tab-container">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+      <% if @minimum_password_length %>
+        <br />
+        <em><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
+
+
+    <div class="row">
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.password_field :current_password, autocomplete: "current-password" %>
+      </div>
+    </div>
+    as
+
+      <div class="actions" style="text-align: right;">
+        <%= f.submit "Update", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+
+    <br />
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+      <% if @minimum_password_length %>
+        <br />
+        <em><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <h3>Cancel my account</h3>
+
+      <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+      <div class="actions" style="text-align: right;">
+        <%= f.submit "Update", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>

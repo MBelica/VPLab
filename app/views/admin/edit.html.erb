@@ -1,0 +1,98 @@
+<div class="editable-form" data-mode="read">
+  <%= form_for :user, url: admin_users_edit_path(@user), action: :update, html: {"data-editable" => 'false'}, method: :post  do |f| %>
+    <input value="Hello" class="form-control"/>
+    <div class="user-admin-content">
+      <div class="header">
+        <div class="row">
+          <div class="col-md-6 md-center">
+            <h4 class="title">admin admin</h4>
+          </div>
+          <div class="col-md-6 pull-right text-right md-center">
+            <div aria-label="..." class="btn-group pull-right" role="group">
+              <%= link_to 'Edit', '', :class => 'btn btn-primary btn-normal edit-button editable-form-mode-switch' %>
+              <div class="btn-group">
+                <button class="btn btn-default btn-normal dropdown-toggle" data-toggle="dropdown" href="#" type="button">
+                  Additional functions
+                  <b class="caret"></b>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="/hroot-demo/admin/users/1/login_as">Login as admin admin</a></li>
+                </ul>
+              </div>
+              <button class="btn btn-default btn-normal" data-dismiss="modal" type="button">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal">
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Common data</h4>
+            <table class="table">
+              <thead>
+              <tr>
+                <td>First name</td>
+                <td>admin</td>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Last name</td>
+                <td>admin</td>
+              </tr>
+              <tr>
+                <td>Role</td>
+                <td>Administrator</td>
+              </tr>
+              <tr>
+                <td>Unique code</td>
+                <td>9iwaq5</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-6">
+            <h4>Account data</h4>
+            <table class="table">
+              <thead>
+              <tr>
+                <td>Email</td>
+                <td><a href="mailto:admin@example.com">admin@example.com</a></td>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Secondary email</td>
+                <td></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Required fields</h4>
+            <table class="table">
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-6">
+            <h4>Optional fields</h4>
+            <table class="table">
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="userinfo">
+        </div>
+      </div>
+    </div>
+
+        <%= f.label :lastname %>
+        <%= f.text_field :lastname, class: 'form-control' %>
+        <%= f.submit "Save changes", class: "btn btn-primary" %>
+
+  <% end %>
+</div>

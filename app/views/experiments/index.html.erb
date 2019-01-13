@@ -1,0 +1,32 @@
+<div class="row">
+  <div class='col-md-12'>
+    <div class="row no-side-margin">
+      <div class="float-left col-6"><h4>Experiments</h4></div>
+      <div class="float-right col-6 text-right">
+        <div class="item-top-navi"><%= link_to 'New Experiment', experiments_new_path, class: 'btn btn-primary' %></div>
+      </div>
+    </div>
+    <div class="row no-side-margin">
+      <% if @user.experiments.any? %>
+        <table id="experiments-table" class="display table table-striped table-bordered">
+          <thead>
+          <tr>
+            <th class="hidden-attributes" style="width: 19px !important;"></th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">State</th>
+            <th scope="col">Signup State</th>
+            <th scope="col">First Session</th>
+            <th scope="col">Last Session</th>
+            <th scope="col">Assignments</th>
+            <th scope="col">Experimenters</th>
+          </tr>
+          </thead>
+          <tbody>
+              <%= render @experiments %>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  contact_name: MyText
+  contact_email: MyString
+  finished: false
+  invitation_subject: MyString
+  invitation_text: MyText
+  invitation_start: 2018-12-26 19:53:30
+  invitation_hours: 1
+  configuration_size: 1
+  configuration_gender: MyString
+  configuration_study_id: 1
+  configuration_degree_id: 1
+  configuration_experience: false
+  configuration_lang: 1
+  vp_primary: 
+  vp_secondary: 
+  vp_max: 
+  vp_available: 
+  confirmation_subject: MyString
+  confirmation_text: MyText
+
+two:
+  title: MyString
+  description: MyText
+  contact_name: MyText
+  contact_email: MyString
+  finished: false
+  invitation_subject: MyString
+  invitation_text: MyText
+  invitation_start: 2018-12-26 19:53:30
+  invitation_hours: 1
+  configuration_size: 1
+  configuration_gender: MyString
+  configuration_study_id: 1
+  configuration_degree_id: 1
+  configuration_experience: false
+  configuration_lang: 1
+  vp_primary: 
+  vp_secondary: 
+  vp_max: 
+  vp_available: 
+  confirmation_subject: MyString
+  confirmation_text: MyText

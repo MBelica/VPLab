@@ -1,0 +1,17 @@
+<div class='row'>
+  <div class='col-sm-12'>
+    <div class='jumbotron'>
+      <h4>Welcome <%= current_user.lastname %>!</h4><br /> <br /><br />
+
+      <p>
+        Your Properties
+        <ul>
+        <% if user_signed_in? %>
+        <li><%= link_to 'Role: ' + current_user.role, '', class: 'nav-link' %> </li>
+          <li > <%= link_to ('Moderator: ' + (current_user.moderator? ? 'yes' : 'no')), '', class: 'nav-link' %> </li>
+      <% end %>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>

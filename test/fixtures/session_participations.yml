@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  session_id: 1
+  user_id: 1
+  reminded_at: 2019-01-07 18:17:03
+  showup: false
+  participated: false
+  noshow: false
+
+two:
+  session_id: 1
+  user_id: 1
+  reminded_at: 2019-01-07 18:17:03
+  showup: false
+  participated: false
+  noshow: false

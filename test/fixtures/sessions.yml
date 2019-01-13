@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  experiment_id: 1
+  location_id: 1
+  reference_session_id: 1
+  start_at: 2019-01-06 20:34:36
+  end_at: 2019-01-06 20:34:36
+  description: MyText
+  needed: 1
+  reserve: 1
+  limitations: MyText
+  reminder_enabled: false
+  reminder_subject: MyString
+  reminder_text: MyText
+  reminder_hours: 1
+
+two:
+  experiment_id: 1
+  location_id: 1
+  reference_session_id: 1
+  start_at: 2019-01-06 20:34:36
+  end_at: 2019-01-06 20:34:36
+  description: MyText
+  needed: 1
+  reserve: 1
+  limitations: MyText
+  reminder_enabled: false
+  reminder_subject: MyString
+  reminder_text: MyText
+  reminder_hours: 1

@@ -1,0 +1,51 @@
+// Place all the styles related to the Admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.editable-form {
+  input:disabled {
+    border: 0;
+    background-color: #ffffff;
+  }
+}
+
+.user-admin-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  outline: 0;
+
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+
+    .title {
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    .row {
+      width: 100%;
+
+      .md-center {
+        padding-top: 10px;
+        text-align: center !important;
+      }
+    }
+  }
+
+  .body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+  }
+}

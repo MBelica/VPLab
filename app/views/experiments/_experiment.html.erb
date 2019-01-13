@@ -1,0 +1,11 @@
+<tr>
+  <td class="table-responsive-more"><p class="hidden"><%= experiment.id %></p></td>
+  <td><%= link_to experiment.title, experiments_edit_path(experiment) %></td>
+  <td><%= experiment.description %></td>
+  <td><%= experiment.finished ? "closed" : "open" %></td>
+  <td><%= experiment.signup_active ? "active" : "inactive" %></td>
+  <td><%= experiment.created_at.strftime("%H:%M, %d.%m.%Y") %></td>
+  <td><%= experiment.created_at.strftime("%H:%M, %d.%m.%Y") %></td>
+  <td><%= experiment.assignments_size.to_s + '/' + ((experiment.configuration_size < 0) ? "unlimited" : experiment.configuration_size.to_s) %></th>
+  <td><%= experiment.experimenters %></th>
+</tr>

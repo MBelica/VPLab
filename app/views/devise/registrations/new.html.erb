@@ -1,0 +1,226 @@
+<h2>Sign up</h2>
+
+<br />
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <br />
+
+  Please enter your email and a password - these values will be used to login. <br /> <br />
+  <div class="field form-group content row" style="overflow: auto">
+    <div class="col-sm-5" style="text-align: right;">
+      <%= f.label :email, style: "line-height: 34px;" %>
+    </div>
+    <div class="col-sm-7">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div> <br />
+  </div>
+
+  <div class="field form-group content row" style="overflow: auto">
+    <div class="col-sm-5" style="text-align: right;">
+      <%= f.label :password, style: "line-height: 34px;" %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
+    </div>
+    <div class="col-sm-7">
+      <%= f.password_field :password, autocomplete: "new-password", style: "width:100%", class: "form-control" %>
+    </div> <br />
+  </div>
+
+  <div class="field form-group content row" style="overflow: auto">
+    <div class="col-sm-5" style="text-align: right;">
+      <%= f.label :password_confirmation, style: "line-height: 34px;" %>
+    </div>
+    <div class="col-sm-7">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+    </div>  <br />
+  </div>
+
+  <br /> <hr />
+
+  Please provide the following fields. After registration they cannot be changed: <br /> <br />
+
+  <div class="field form-group content row" style="overflow: auto">
+    <div class="col-sm-5" style="text-align: right;">
+      <%= f.label :firstname, style: "line-height: 34px;" %>
+    </div>
+    <div class="col-sm-7">
+      <%= f.text_field :firstname, autofocus: true, class: "form-control" %>
+    </div> <br />
+  </div>
+
+  <div class="field form-group content row" style="overflow: auto">
+    <div class="col-sm-5" style="text-align: right;">
+      <%= f.label :lastname, style: "line-height: 34px;" %>
+    </div>
+    <div class="col-sm-7">
+      <%= f.text_field :lastname, autofocus: true, class: "form-control" %>
+    </div> <br />
+  </div>
+
+  <div class="field form-group content row" style="overflow: auto">
+    <div class="col-sm-5" style="text-align: right;">
+      <%= f.label :matrikel, 'Student No. (Matrikelnr.)', style: "line-height: 34px;" %>
+    </div>
+    <div class="col-sm-7">
+      <%= f.text_field :matrikel, autofocus: true, class: "form-control" %>
+    </div> <br />
+  </div>
+
+  <br /> <hr />
+
+  The following fields are optional. The more fields you enter, the higher the chance of being invited to experiment sessions. <br /><br />
+
+  <div class="field form-group content row" style="overflow: auto">
+    <div class="col-sm-5" style="text-align: right;">
+      <%= f.label :gender, style: "line-height: 34px;" %>
+    </div>
+    <div class="col-sm-7">
+      <%= f.text_field :gender, autofocus: true, class: "form-control" %>
+    </div> <br />
+  </div>
+
+  <div class="field form-group content row" style="overflow: auto">
+    <div class="col-sm-5" style="text-align: right;">
+      <%= f.label :birthday, style: "line-height: 34px;" %>
+    </div>
+    <div class="col-sm-7">
+      <%= f.text_field :birthday, autofocus: true, class: "form-control" %>
+    </div> <br />
+  </div>
+
+  <div class="field form-group content row" style="overflow: auto">
+    <div class="col-sm-5" style="text-align: right;">
+      <%= f.label :country_name, style: "line-height: 34px;" %>
+    </div>
+    <div class="col-sm-7">
+      <%= f.text_field :country_name, autofocus: true, class: "form-control" %>
+    </div> <br />
+  </div>
+
+  <div class="field form-group content row" style="overflow: auto">
+    <div class="col-sm-5" style="text-align: right;">
+      <%= f.label :begin_study, 'Begin of studies', style: "line-height: 34px;" %>
+    </div>
+    <div class="col-sm-7">
+      <%= f.text_field :begin_study, autofocus: true, class: "form-control" %>
+    </div> <br />
+  </div>
+
+  <div class="field form-group content row" style="overflow: auto">
+    <div class="col-sm-5" style="text-align: right;">
+      <%= f.label :experience, style: "line-height: 34px;" %>
+    </div>
+    <div class="col-sm-7">
+      <%= f.text_field :experience, autofocus: true, class: "form-control" %>
+    </div> <br />
+  </div>
+
+  <div class="field form-group content row" style="overflow: auto">
+    <div class="col-sm-5" style="text-align: right;">
+      <%= f.label :languages, style: "line-height: 34px;" %>
+    </div>
+    <div class="col-sm-7" style="line-height: 34px;">
+      Deutsch: <%= f.check_box :langDE, checked: true, autofocus: true %> &nbsp;
+      English: <%= f.check_box :langEN, checked: true, autofocus: true %>
+    </div> <br />
+  </div>
+
+  <div class="field form-group content row" style="overflow: auto">
+    <div class="col-sm-5" style="text-align: right;">
+      <%= f.label :study_id, 'Study program', style: "line-height: 34px;" %>
+    </div>
+    <div class="col-sm-7">
+      <%= f.text_field :study_id, autofocus: true, class: "form-control" %>
+    </div> <br />
+  </div>
+
+  <div class="field form-group content row" style="overflow: auto">
+    <div class="col-sm-5" style="text-align: right;">
+      <%= f.label :degree_id, style: "line-height: 34px;" %>
+    </div>
+    <div class="col-sm-7">
+      <%= f.text_field :degree_id, autofocus: true, class: "form-control" %>
+    </div> <br />
+  </div>
+
+  <br />
+
+  <%= f.check_box :terms, id: "prpp" %> I have read and accepted the <a href="#" data-toggle="modal" data-target="#prppModal">participant rules and privacy policy</a>.
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="prppModal" tabindex="-1" role="dialog" aria-labelledby="prppModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="prppModalTitle">RULES AND PRIVACY POLICY FOR REGISTRATION FOR ECONOMIC EXPERIMENTS</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3>RULES</h3>
+
+          <h4>LABORATORY EXPERIMENTS</h4>
+          <p>To participate in experiments that are carried out by researchers at the School of Business, Economics and Social Sciences of the Universität Hamburg, you must register online (http://www.wiso.uni-hamburg.de/hroot) and provide the School with a signed copy of this document. You can sign after registering when you show up for your first participation in an experiment in the laboratory.</p>
+          <p>Registration for laboratory experiments is a declaration of intent to participate in experiments that are carried out by researchers at the School of Business, Economics and Social Sciences.</p>
+
+          <h4>RULES FOR LABORATORY EXPERIMENTS</h4>
+          <p><ul>
+          <li>For each experiment, a certain number of registered persons will receive an invitation by mail. Only invited persons are entitled to participate in the experiment.</li>
+          <li>After receiving an invitation via email to a particular experiment a positive reply by the participant must follow in order to get registered for this experiment. This answer is a firm commitment to participate in this experiment.</li>
+        </ul></p>
+          <p>If a place in the experiment could be reserved.
+            <ul>
+              <li>We guarantee all participants, who are registered for an experiment and show up in time punctually a show-up-fee of 5 €.</li>
+              <li>The participants are usually paid in cash.The amount of the payment generally depends on one's own decisions and the decisions of the other participants of the experiment respectively.</li>
+              <li>During an experiment, each participant must follow the rules that are set out by the experimenter's instructions.</li>
+              <li>To ensure that only invited and duly notified by e-mail and properly registered persons participate in the experiment, the identity of all participants will be checked (official document with a picture). A participant who cannot identify herself, receives no show-up-fee and may possibly not participate in the experiment.</li>
+              <li>Participants who have declared their willingness to participate in a particular experiment and reserved a place in the experiment for themselves and do not show up or shoow up late, must be aware of the fact that they endanger the execution of the experiment due to lack of participants.</li>
+
+              <h4>CONSENT</h4>
+          <p>By registering for laboratory experiments, you agree with the following statements:</p>
+          <p>I have been informed that my non-appearance or my arriving late to the experiment, for which I have registered, can lead to the cancellation of the experiment. I undertake to inform the WiSo-Laboratory at least 24 hours before the start of the experiment on my non-participation.</p>
+          <p>For each non-appearance after registration and reservation for an experiment - without timely cancellation or plausible indication of reasons to WiSo-Laboratory - my personal user's account receives a minus point. I am aware that my chances of being invited for further experiments fall, the more negative points my account receives, and that I, eventually, will not be invited to experiments anymore at all.</p>
+          <p>The insurance coverage in the rooms of the School is given with respect of legal liability under private law. The School of Business, Economics and Social Sciences is liable for all damages which it is responsible for. Strict liability does not exist.</p>
+
+          <h3>PRIVACY POLICY</h3>
+
+          <h4>PARTICIPANTS</h4>
+          <p>The data collected in the Hamburg Registration and Organization Online Tool of the School of Buisiness, Economics and Social Sciences are used only for the organization and administration of scientific experiments.</p>
+          <p>This information will not be disclosed to third parties.</p>
+
+          <p>We use the information for the following purposes:</p>
+          <ul>
+            <li>To inform the participants about new laboratory experiments and to invite them.</li>
+            <li>To perform a scientifically motivated selection of participants for certain experiments.</li>
+            <li>To check the show-up or non-show-up of the registered participants to experiments.</li>
+            <p>There is no link between the data generated in the experiment and the data in the registration and organization system. Each participant may at any time determine that he or she will not receive any further invitations to experiments. At the request of a participant, the data collected in the registration and organization system will be fully erased. Therefor an informal written and signed cancellation request must be sent to the Universität Hamburg, School of Business, Economics and Social Sciences, WiSo-Laboratory, Von-Melle-Park 5, 20146 Hamburg, Germany.</p>
+
+            <h4>EXPERIMENTS</h4>
+            <p><ul>
+            <li>During the experiments data is generated through the decisions of the participants of these experiments.</li>
+            <li>This data will be analyzed scientifically by researchers. The decision data is typically anonymized and no specific person can be connected to it. In this sense, participation in the experiments is anonymous.</li>
+            <li>The generated, anonymized data is used for the preparation of scientific research papers and lectures. These works will be published.</li>
+          </ul>
+            </p>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <br /><br />
+
+  <div class="actions">
+    <%= f.submit "Sign up", id: 'submitAccount', class: "btn btn-primary" %>
+  </div>
+<% end %>

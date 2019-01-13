@@ -1,0 +1,11 @@
+<tr class='clickable-row' data-href='<%= admin_users_edit_path(user) %>'>
+  <td class="table-responsive-more"><p class="hidden"><%= user.id %></p></td>
+  <td><%= user.lastname %></td>
+  <td><%= user.firstname %></td>
+  <td><%= user.role %></td>
+  <td><%= user.email %></td>
+  <td><%= user.code %></td>
+  <td><%= user.noshow_count %></td>
+  <td><%= user.participations_count %></td>
+  <td><%= user.created_at.strftime("%H:%M, %d.%m.%Y") %></td>
+</tr>

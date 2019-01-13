@@ -1,0 +1,31 @@
+<div class="row">
+  <div class='col-md-12'>
+    <div class="row no-side-margin">
+      <div class="float-left col-6"><h4>User Control</h4></div>
+      <div class="float-right col-6 text-right">
+        <div class="item-top-navi"><%= link_to 'New User', admin_users_new_path, class: 'btn btn-primary' %></div>
+      </div>
+    </div>
+    <div class="row no-side-margin">
+        <table id="experiments-table" class="display table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th class="hidden-attributes" style="width: 19px !important;"></th>
+              <th scope="col">Lastname</th>
+              <th scope="col">Firstname</th>
+              <th scope="col">Role</th>
+              <th scope="col">Email</th>
+              <th scope="col">Code</th>
+              <th scope="col">No-Shows</th>
+              <th scope="col">Participations</th>
+              <th scope="col">Created</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @users.all.each do |user| %>
+            <%= render partial: "user", locals: {user: user} %>
+          <% end %>
+        </table>
+    </div>
+  </div>
+</div>

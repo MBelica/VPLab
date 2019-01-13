@@ -1,0 +1,11 @@
+<h4>Experiment: <%= @experiment.title %></h4>
+<table>
+<tr>
+  <td><%= @experiment.description %></td>
+  <td><%= @experiment.finished ? "closed" : "open" %></td>
+  <td><%= @experiment.signup_active ? "active" : "inactive" %></td>
+  <td><%= @experiment.created_at.strftime("%H:%M, %d.%m.%Y") %></td>
+  <td><%= @experiment.created_at.strftime("%H:%M, %d.%m.%Y") %></td>
+  <td><%= @experiment.experimenters %></th>
+</tr>
+</table>

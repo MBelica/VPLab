@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VpLab</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+
+    <% if (params[:controller] != 'home') %>
+      <div class="container-fluid">
+        <div class="row hidden-print">
+          <div class="col-sm-12">
+            <ul class="breadcrumb ">
+
+              <%= render_breadcrumbs  :tag => :li, :separator => ' / ' %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="container-fluid">
+      <div class='row'>
+        <div class='col-sm-12 flash'>
+          <% flash.each do |key, value| %>
+            <% if key != 'timedout' %>
+              <div class="alert alert-<%= key %> .alert-dismissible">
+                <%= value %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <%= yield %>
+
+      <%= render 'layouts/footer' %>
+    </div>
+
+  </body>
+</html>
