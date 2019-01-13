@@ -4,12 +4,12 @@ class User < ApplicationRecord
 
   APPROVED_DOMAINS = %w[uni-landau.de student.kit.edu gmail.com icloud.com].freeze
   enum role: %i[student moderator admin]
-  attr_encrypted :email, key: [ENV["GENERAL_ENCRYPTION_KEY"]].pack("H*")
-  attr_encrypted :firstname, key: [ENV["GENERAL_ENCRYPTION_KEY"]].pack("H*")
-  attr_encrypted :lastname, key: [ENV["GENERAL_ENCRYPTION_KEY"]].pack("H*")
-  attr_encrypted :matrikel, key: [ENV["GENERAL_ENCRYPTION_KEY"]].pack("H*")
-  attr_encrypted :birthday, key: [ENV["GENERAL_ENCRYPTION_KEY"]].pack("H*")
-  blind_index :email, key: [ENV["BLIND_INDEX_KEY"]].pack("H*")
+  attr_encrypted :email, key: [ENV["general_encryption_key"]].pack("H*")
+  attr_encrypted :firstname, key: [ENV["general_encryption_key"]].pack("H*")
+  attr_encrypted :lastname, key: [ENV["general_encryption_key"]].pack("H*")
+  attr_encrypted :matrikel, key: [ENV["general_encryption_key"]].pack("H*")
+  attr_encrypted :birthday, key: [ENV["general_encryption_key"]].pack("H*")
+  blind_index :email, key: [ENV["blind_index_key"]].pack("H*")
 
   before_validation :downcase_email
   validates :matrikel, presence: true, if: :matrikel_uniqueness_check, on: :create
@@ -79,10 +79,10 @@ class User < ApplicationRecord
   end
 
   def index_encryption_key
-    [ENV["BLIND_INDEX_KEY"]]
+    [ENV["blind_index_key"]]
   end
 
   def general_encryption_key
-    [ENV["ENCRYPTION_KEY"]]
+    [ENV["general_encryption_key"]]
   end
 end
